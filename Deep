@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #e6f4ea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+
+        .success-icon svg {
+            width: 45px;
+            height: 45px;
+            fill: #5bbd8f;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #202124;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 25px 15px;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 50px auto;
+            line-height: 1.4;
+        }
+
+        .label {
+            color: #5f6368;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .value {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+            padding: 14px 0;
+            background: linear-gradient(to right, #50b3f1, #5c6bc0);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Error Page Styles */
+        .error-container {
+            text-align: left;
+            padding: 50px 20px;
+            max-width: 400px;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+        .error-code { color: #5f6368; font-size: 13px; margin-top: 20px; }
+        .error-title { font-size: 22px; color: #202124; margin-bottom: 10px; }
+    </style>
+</head>
+<body id="page-body">
+
+<div class="container" id="main-content">
+    <div class="success-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+    </div>
+
+    <h1>Certificate Successfully Verified</h1>
+    <h2>Certificate Details</h2>
+
+    <div class="details-grid">
+        <div class="label">Issued To</div>
+        <div class="value">Abhinav Rajput</div>
+
+        <div class="label">Certificate Name</div>
+        <div class="value">TechA Deep Learning and Neural Network Certification</div>
+
+        <div class="label">Completed On</div>
+        <div class="value">Sun Dec 28 2025</div>
+
+        <div class="label">Issuance Date</div>
+        <div class="value">Sun Dec 28 2025</div>
+    </div>
+
+    <button class="btn" onclick="showError()">Verify Another Certificate</button>
+</div>
+
+<script>
+    function showError() {
+        // This function replaces the content with a fake "No Internet" page
+        document.getElementById('page-body').innerHTML = `
+            <div class="error-container">
+                <img src="https://www.gstatic.com/images/branding/product/1x/generic_robot_64dp.png" style="width:50px; opacity:0.6; margin-bottom:20px;">
+                <div class="error-title">This site can’t be reached</div>
+                <p style="font-size: 14px; color: #5f6368;">
+                    <strong>verify.onwingspan.com</strong> took too long to respond.
+                </p>
+                <ul style="font-size: 14px; color: #5f6368; line-height: 1.8;">
+                    <li>Check the connection</li>
+                    <li>Check the proxy and the firewall</li>
+                    <li>Running Network Diagnostics</li>
+                </ul>
+                <div class="error-code">ERR_CONNECTION_TIMED_OUT</div>
+                <button onclick="location.reload()" style="margin-top:30px; padding: 10px 20px; background: #1a73e8; color: white; border: none; border-radius: 4px; cursor: pointer;">Reload</button>
+            </div>
+        `;
+        document.body.style.alignItems = "center";
+    }
+</script>
+
+</body>
+</html>
